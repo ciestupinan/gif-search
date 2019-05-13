@@ -23,15 +23,17 @@ def index():
 def find_gifs():
 	search = request.args.get('search')
 
-	response = requests.get("http://api.giphy.com/v1/gifs/search?q="+search+"&api_key= DLCVuTK6KZExOS7JoMq82bi5MaI6EbWO&limit=10")
+	response = requests.get("http://api.giphy.com/v1/gifs/search?q="+search+"&api_key=DLCVuTK6KZExOS7JoMq82bi5MaI6EbWO&limit=10")
 	data = response.json()
+	gifs = []
 	if response.ok:
-		gifs = data['embed_url']
+		l = data['data']
+		for i in range(len(l)):
+			gifs.append(data['data'][i]['images']['original']['url'])
 	else:
 		flash("No gifs found")
-		gifs = []
 
-	return render_template("gif.html",data=data,gifs=gifs)
+	return render_template("gif.html",gifs=gifs)
 
 if __name__ == "__main__":
 	app.debug = True
