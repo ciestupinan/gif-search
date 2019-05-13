@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    
-
-
-  	<title>GIF search</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <title>GIF search</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
     <form action="/gifs" method="GET">
-        <input type="text" placeholder="Search for GIF" name="search">
+        <label for="autocomplete">Search for GIF:</label>
+        <input id="autocomplete" type="text" placeholder="Search for GIF" name="search">
         <input type="submit" value="Go">
     </form>
+
                 
     {% block content %}
     {% endblock %}
  
     </div>            
+
+
+    <script>
+        var tags = ["about","above","across","app","apple","appreciate","bad","ball","balloon","bell","cat"];
+
+        $( "#autocomplete" ).autocomplete({
+            source: function( request, response ) {
+                var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( request.term ), "i" );
+                response( $.grep( tags, function( item ){
+                    return matcher.test( item );
+                }) );
+            }
+        });
+    </script>
 
     </body>
 </html>
