@@ -6,7 +6,12 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="static/css/bootstrap.css">
+
   </head>
+
+  <body>
+
     <form action="/gifs" method="GET">
         <label for="autocomplete">Search for GIF:</label>
         <input id="autocomplete" type="text" placeholder="Search for GIF" name="search">
@@ -16,8 +21,7 @@
                 
     {% block content %}
     {% endblock %}
- 
-    </div>            
+          
 
 
     <script>
