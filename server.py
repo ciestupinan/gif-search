@@ -23,7 +23,7 @@ def index():
 def find_gifs():
 	search = request.args.get('search')
 
-	response = requests.get("http://api.giphy.com/v1/gifs/search?q="+search+"&api_key=DLCVuTK6KZExOS7JoMq82bi5MaI6EbWO&limit=10")
+	response = requests.get("http://api.giphy.com/v1/gifs/search?q="+search+"&api_key=DLCVuTK6KZExOS7JoMq82bi5MaI6EbWO&limit=24")
 	data = response.json()
 	gifs = []
 	if response.ok:
