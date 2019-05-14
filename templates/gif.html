@@ -1,8 +1,39 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	{% for g in gifs %}
-	<img src="{{g}}"/>
-	{%endfor%}
+<div class="container">
+
+	{% if gifs|length == 0 %}
+		<div class="row">
+			<p>No gifs found.</p>
+		</div>
+	{% else %}
+
+
+		{% for gif in gifs %}
+		
+			{% if loop.index0 % 3 == 0%}
+				<div class="row">
+					<div class="col-4 p-3">
+						<img src="{{gif}}" class="img-fluid"/>
+					</div>
+
+			{% elif loop.index0 % 3 == 1 %}
+				<div class="col-4 p-3">
+					<img src="{{gif}}" class="img-fluid"/>
+				</div>
+
+			{% elif loop.index0 % 3 == 2 %}
+					<div class="col-4 p-3">
+						<img src="{{gif}}" class="img-fluid"/>
+					</div>
+				</div>
+
+			{% endif %}
+
+		{% endfor %}
+	{% endif %}
+
+</div>
 		
 {% endblock %}

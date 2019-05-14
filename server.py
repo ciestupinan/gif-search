@@ -30,8 +30,6 @@ def find_gifs():
 		l = data['data']
 		for i in range(len(l)):
 			gifs.append(data['data'][i]['images']['original']['url'])
-	else:
-		flash("No gifs found")
 
 	return render_template("gif.html",gifs=gifs)
 

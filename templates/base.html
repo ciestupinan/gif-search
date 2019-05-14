@@ -9,12 +9,14 @@
     <script src="static/js/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="static/css/bootstrap.css">
+    <link rel="stylesheet" href="static/css/stylesheet.css">
 
   </head>
 
   <body>
 
-    <form action="/gifs" method="GET">
+    <div class="container mt-5 mb-5">
+        <form action="/gifs" method="GET">
         <label for="autocomplete">Search for GIF:</label>
         <input id="autocomplete" type="text" placeholder="Search for GIF" name="search">
         <input type="submit" value="Go">
@@ -24,6 +26,9 @@
     {% block content %}
     {% endblock %}
           
+    </div>
+
+    
 
 
     <script>
