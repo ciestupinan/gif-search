@@ -1,0 +1,1 @@
+Web app displays gifs based on user's search terms. 
