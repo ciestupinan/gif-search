@@ -15,13 +15,18 @@
 
   <body>
 
-    <div class="container mt-5 mb-5">
-        <form action="/gifs" method="GET">
-        <label for="autocomplete">Search for GIF:</label>
-        <input id="autocomplete" type="text" placeholder="Search for GIF" name="search">
-        <input type="submit" value="Go">
-    </form>
-
+    <div class="container m-5">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form class="m-4" action="/gifs" method="GET">
+                    <input class="form-control" name="search" type="search" placeholder="Search for gifs" aria-label="Search">
+                </form>
+            </div>
+            <div class="col-3"></div>
+            
+        </div>
+    
                 
     {% block content %}
     {% endblock %}

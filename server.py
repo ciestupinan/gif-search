@@ -31,10 +31,10 @@ def find_gifs():
 		for i in range(len(l)):
 			gifs.append(data['data'][i]['images']['original']['url'])
 
-	return render_template("gif.html",gifs=gifs)
+	return render_template("gif.html",gifs=gifs,search=search)
 
 if __name__ == "__main__":
-	app.debug = True
+	app.debug = False
 
 
 	DebugToolbarExtension(app)

@@ -9,7 +9,14 @@
 			<p>No gifs found.</p>
 		</div>
 	{% else %}
-
+		<div class="row my-3">
+			<div class="col-md-3"></div>
+			<div class="col-md-6" style="text-align: center">
+				<h4>Gifs for "{{search}}"</h4>
+			</div>
+			<div class="col-md-3"></div>
+			
+		</div>
 
 		{% for gif in gifs %}
 		
